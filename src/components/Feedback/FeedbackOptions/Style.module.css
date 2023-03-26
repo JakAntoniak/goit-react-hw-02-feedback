@@ -1,0 +1,17 @@
+.button-section {
+  flex-wrap: wrap;
+}
+
+.button {
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: rgb(130, 206, 206);
+}
+
+.button:not(:last-child) {
+  margin-right: 10px;
+}
