@@ -32,10 +32,10 @@ class Feedback extends Component {
     return (
       <div className={css.container}>
         <Section
-          statiCTitle="Please leave feedback"
-          staticChildren={
-            <FeedbackOptions onLeaveFeedback={this.onLeaveFeedback} />
-          }
+          title="Please leave feedback"
+          children={<FeedbackOptions onLeaveFeedback={this.onLeaveFeedback} />}
+        />
+        <Section
           title="Statistics"
           children={
             total === 0 ? (
