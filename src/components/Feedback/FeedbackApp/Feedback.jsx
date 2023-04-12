@@ -31,20 +31,16 @@ class Feedback extends Component {
 
     return (
       <div className={css.container}>
-        <Section
-          title="Please leave feedback"
-          children={<FeedbackOptions onLeaveFeedback={this.onLeaveFeedback} />}
-        />
-        <Section
-          title="Statistics"
-          children={
-            total === 0 ? (
-              <Notification message="There is no feedback" />
-            ) : (
-              <Statistics good={good} neutral={neutral} bad={bad} />
-            )
-          }
-        />
+        <Section title="Please leave feedback">
+          <FeedbackOptions onLeaveFeedback={this.onLeaveFeedback} />
+        </Section>
+        <Section title="Statistics">
+          {total === 0 ? (
+            <Notification message="There is no feedback" />
+          ) : (
+            <Statistics good={good} neutral={neutral} bad={bad} />
+          )}
+        </Section>
       </div>
     );
   }
