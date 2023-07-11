@@ -5,42 +5,24 @@ export const Statistics = ({
   good,
   neutral,
   bad,
-  total = good + neutral + bad,
+  total,
   positivePercentage,
 }) => {
-  const CountTotalFeedback = ({ total }) => {
-    return total;
-  };
-
-  const CountPositiveFeedbackPercentage = () => {
-    const percent = Math.round((good / total) * 100);
-    if (total === 0) {
-      return ' - %';
-    }
-    return ' ' + percent + '%';
-  };
-
   return (
-    <div className={css.statistics}>
-      <p>Good: {good}</p>
-      <p>Neutral: {neutral}</p>
-      <p>Bad: {bad}</p>
-      <p>Total: {<CountTotalFeedback total={total} />}</p>
-      <p>
-        Positive Feedback:
-        {
-          <CountPositiveFeedbackPercentage
-            positivePercentage={positivePercentage}
-          />
-        }
-      </p>
-    </div>
+    <section className={css.statistics}>
+      <div>Good: {good}</div>
+      <div>Neutral: {neutral}</div>
+      <div>Bad: {bad}</div>
+      <div>Total: {total}</div>
+      <div>Positive feedback: {positivePercentage}%</div>
+    </section>
   );
 };
 
-export default Statistics;
-
 Statistics.propTypes = {
+  good: PropTypes.number,
+  neutral: PropTypes.number,
+  bad: PropTypes.number,
   total: PropTypes.number,
   positivePercentage: PropTypes.number,
 };
